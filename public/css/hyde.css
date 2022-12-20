@@ -1,0 +1,523 @@
+/*
+ *  __                  __
+ * /\ \                /\ \
+ * \ \ \___   __  __   \_\ \     __
+ *  \ \  _ `\/\ \/\ \  /'_` \  /'__`\
+ *   \ \ \ \ \ \ \_\ \/\ \_\ \/\  __/
+ *    \ \_\ \_\/`____ \ \___,_\ \____\
+ *     \/_/\/_/`/___/> \/__,_ /\/____/
+ *                /\___/
+ *                \/__/
+ *
+ * Designed, built, and released under MIT license by @mdo. Learn more at
+ * https://github.com/poole/hyde.
+ */
+
+
+/*
+ * Contents
+ *
+ * Global resets
+ * Sidebar
+ * Container
+ * Reverse layout
+ * Themes
+ */
+
+
+/*
+ * Global resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
+
+html {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+}
+@media (min-width: 48em) {
+  html {
+    font-size: 16px;
+  }
+}
+@media (min-width: 58em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+
+/*
+ * Sidebar
+ *
+ * Flexible banner for housing site name, intro, and "footer" content. Starts
+ * out above content in mobile and later moves to the side with wider viewports.
+ */
+
+.sidebar {
+  text-align: center;
+  padding: 2rem 2rem;
+  color: rgba(255,255,255,.5);
+  background-color: #202020;
+}
+@media (min-width: 48em) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 15rem;   /*was 18*/
+    text-align: right;
+  }
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: #fff;
+}
+
+.sidebar img.align-right {
+ /*float: right;*/
+ max-width: 70%;
+ /*margin: 30px 0px;*/
+ margin-left: 50px;
+}
+
+/* About section */
+.sidebar-about h1 {
+  text-align: right;
+  color: #fff;
+  margin-top: 0;
+  font-family: "Abril Fatface", serif;
+  font-size: 3.25rem;
+
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  margin-bottom: 1rem;
+}
+.sidebar-nav-item {
+  display: block;
+  line-height: 1.75;
+  padding-right: 0.5em;
+}
+a.sidebar-nav-item:hover,
+a.sidebar-nav-item:focus {
+  text-decoration: underline;
+}
+.sidebar-nav-item.active {
+    font-weight: bold;
+    background-color: rgb(50, 50, 50);
+}
+
+/* a {
+  -moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  border-bottom: dotted 1px rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  color: inherit;
+}
+
+  a:hover {
+    border-bottom-color: transparent;
+  } */
+
+/* Sticky sidebar
+ *
+ * Add the `sidebar-sticky` class to the sidebar's container to affix it the
+ * contents to the bottom of the sidebar in tablets and up.
+ */
+
+@media (min-width: 48em) {
+  .sidebar-sticky {
+    position: absolute;
+    right:  1rem;
+    bottom: 1rem;
+    left:   1rem;
+  }
+}
+
+
+/* Container
+ *
+ * Align the contents of the site above the proper threshold with some margin-fu
+ * with a 25%-wide `.sidebar`.
+ */
+
+.content {
+  padding-top:    4rem;
+  padding-bottom: 4rem;
+}
+
+
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+  color: ivory;
+}
+
+  .icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    text-transform: none !important;
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+  }
+
+   .icon > .label {
+    display: none;
+  } 
+  
+
+  .icon:before {
+    line-height: inherit;
+  }
+
+  .icon.solid:before {
+    font-weight: 900;
+  }
+
+  .icon.brands:before {
+    font-family: 'Font Awesome 5 Brands';
+  }
+
+/* List */
+
+ol {
+  list-style: decimal;
+  margin: 0 0 2rem 0;
+  padding-left: 0.75em;
+}
+
+  ol li {
+    padding-left: 0.25em;
+  }
+
+ul {
+  list-style: none;
+  margin: 0 0 2rem 0;
+  padding-left: 1em;
+}
+
+  ul li {
+    padding-left: 0.5em;
+  }
+
+  ul.alt {
+    list-style: none;
+    padding-left: 0;
+  }
+
+    ul.alt li {
+      border-top: solid 1px #ffffff;
+      padding: 0.5em 0;
+    }
+
+      ul.alt li:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+dl {
+  margin: 0 0 2rem 0;
+}
+
+  dl dt {
+    display: block;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+  }
+
+  dl dd {
+    margin-left: 2rem;
+  }
+
+/* Actions */
+
+ul.actions {
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  cursor: default;
+  list-style: none;
+  margin-left: -1rem;
+  padding-left: 0;
+}
+
+  ul.actions li {
+    padding: 0 0 0 1rem;
+    vertical-align: middle;
+  }
+
+  ul.actions.special {
+    -moz-justify-content: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+  }
+
+    ul.actions.special li:first-child {
+      padding-left: 0;
+    }
+
+  ul.actions.stacked {
+    -moz-flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+    ul.actions.stacked li {
+      padding: 1.3rem 0 0 0;
+    }
+
+      ul.actions.stacked li:first-child {
+        padding-top: 0;
+      }
+
+  ul.actions.fit {
+    width: calc(100% + 1rem);
+  }
+
+    ul.actions.fit li {
+      -moz-flex-grow: 1;
+      -webkit-flex-grow: 1;
+      -ms-flex-grow: 1;
+      flex-grow: 1;
+      -moz-flex-shrink: 1;
+      -webkit-flex-shrink: 1;
+      -ms-flex-shrink: 1;
+      flex-shrink: 1;
+      width: 100%;
+    }
+
+      ul.actions.fit li > * {
+        width: 100%;
+      }
+
+    ul.actions.fit.stacked {
+      width: 100%;
+    }
+
+  @media screen and (max-width: 480px) {
+
+    ul.actions:not(.fixed) {
+      -moz-flex-direction: column;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      margin-left: 0;
+      width: 100% !important;
+    }
+
+      ul.actions:not(.fixed) li {
+        -moz-flex-grow: 1;
+        -webkit-flex-grow: 1;
+        -ms-flex-grow: 1;
+        flex-grow: 1;
+        -moz-flex-shrink: 1;
+        -webkit-flex-shrink: 1;
+        -ms-flex-shrink: 1;
+        flex-shrink: 1;
+        padding: 1rem 0 0 0;
+        text-align: center;
+        width: 100%;
+      }
+
+        ul.actions:not(.fixed) li > * {
+          width: 100%;
+        }
+
+        ul.actions:not(.fixed) li:first-child {
+          padding-top: 0;
+        }
+
+        ul.actions:not(.fixed) li input[type="submit"],
+        ul.actions:not(.fixed) li input[type="reset"],
+        ul.actions:not(.fixed) li input[type="button"],
+        ul.actions:not(.fixed) li button,
+        ul.actions:not(.fixed) li .button {
+          width: 100%;
+        }
+
+          ul.actions:not(.fixed) li input[type="submit"].icon:before,
+          ul.actions:not(.fixed) li input[type="reset"].icon:before,
+          ul.actions:not(.fixed) li input[type="button"].icon:before,
+          ul.actions:not(.fixed) li button.icon:before,
+          ul.actions:not(.fixed) li .button.icon:before {
+            margin-left: -0.5em;
+          }
+
+  }
+
+/* Icons */
+
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+  ul.icons li {
+    display: inline-block;
+    padding: 0 0.75em 0 0;
+  }
+
+    ul.icons li:last-child {
+      padding-right: 0;
+    }
+
+    ul.icons li a {
+      border-radius: 100%;
+      box-shadow: inset 0 0 0 1px #ffffff;
+      display: inline-block;
+      height: 1.50rem;
+      line-height: 1.50rem;
+      text-align: center;
+      width: 1.50rem;
+      color: inherit;
+    }
+
+      ul.icons li a:hover {
+        background-color: rgba(255, 255, 255, 0.075);
+      }
+
+      ul.icons li a:active {
+        background-color: rgba(255, 255, 255, 0.175);
+      }
+
+
+@media (min-width: 48em) {
+  .content {
+    max-width: 38rem;
+    margin-left: 20rem;
+    margin-right: 2rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .content {
+    margin-left: 22rem;
+    margin-right: 4rem;
+  }
+}
+
+
+/*
+ * Reverse layout
+ *
+ * Flip the orientation of the page by placing the `.sidebar` on the right.
+ */
+
+@media (min-width: 48em) {
+  .layout-reverse .sidebar {
+    left: auto;
+    right: 0;
+  }
+  .layout-reverse .content {
+    margin-left: 2rem;
+    margin-right: 20rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .layout-reverse .content {
+    margin-left: 4rem;
+    margin-right: 22rem;
+  }
+}
+
+
+
+/*
+ * Themes
+ *
+ * As of v1.1, Hyde includes optional themes to color the sidebar and links
+ * within blog posts. To use, add the class of your choosing to the `body`.
+ */
+
+/* Base16 (http://chriskempson.github.io/base16/#default) */
+
+/* Red */
+.theme-base-08 .sidebar {
+  background-color: #ac4142;
+}
+.theme-base-08 .content a,
+.theme-base-08 .related-posts li a:hover {
+  color: #ac4142;
+}
+
+/* Orange */
+.theme-base-09 .sidebar {
+  background-color: #d28445;
+}
+.theme-base-09 .content a,
+.theme-base-09 .related-posts li a:hover {
+  color: #d28445;
+}
+
+/* Yellow */
+.theme-base-0a .sidebar {
+  background-color: #f4bf75;
+}
+.theme-base-0a .content a,
+.theme-base-0a .related-posts li a:hover {
+  color: #f4bf75;
+}
+
+/* Green */
+.theme-base-0b .sidebar {
+  background-color: #90a959;
+}
+.theme-base-0b .content a,
+.theme-base-0b .related-posts li a:hover {
+  color: #90a959;
+}
+
+/* Cyan */
+.theme-base-0c .sidebar {
+  background-color: #75b5aa;
+}
+.theme-base-0c .content a,
+.theme-base-0c .related-posts li a:hover {
+  color: #75b5aa;
+}
+
+/* Blue */
+.theme-base-0d .sidebar {
+  background-color: #6a9fb5;
+}
+.theme-base-0d .content a,
+.theme-base-0d .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
+/* Magenta */
+.theme-base-0e .sidebar {
+  background-color: #aa759f;
+}
+.theme-base-0e .content a,
+.theme-base-0e .related-posts li a:hover {
+  color: #aa759f;
+}
+
+/* Brown */
+.theme-base-0f .sidebar {
+  background-color: #8f5536;
+}
+.theme-base-0f .content a,
+.theme-base-0f .related-posts li a:hover {
+  color: #8f5536;
+}

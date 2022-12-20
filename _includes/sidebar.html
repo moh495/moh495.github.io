@@ -1,0 +1,42 @@
+<div class="sidebar">
+<img src="/images/profilepic.png" alt="Ajit's Pic" class="align-right" >
+
+    <div class="sidebar-about">
+        <h3>
+          <a href="/aboutMe/">
+            {{ site.title }}
+          </a>
+        </h3>
+
+
+      <!-- <p class="lead">
+                {{ site.description }}
+      </p> -->
+    </div>
+
+    <nav class="sidebar-nav">
+
+      <!-- other tab according to _data/navigation.yml order  -->
+      {% for link in site.data.navigation.main %}
+        <a class="sidebar-nav-item{% if page.url == link.url %} active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+
+      <!--  <a class="sidebar-nav-item" href="/CV-2.pdf" target="_blank"> CV </a> -->
+      
+      <!--  <a class="sidebar-nav-item" href="/outreach/" target="_blank"> Outreach </a> -->
+
+
+      <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v{{ site.version }}</span> -->
+    </nav>
+    <div class="container sidebar-sticky">
+      <ul class="icons">
+        <li><a href="https://www.kaggle.com/salhimohamednadjib/account" target="_blank" class="icon brands fa-kaggle"><span class="label">kaggle</span></a></li>
+        <li><a href="https://www.linkedin.com/in/mohammed-nadjib-allah-salhi-79669419a/" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+        <li><a href="https://github.com/moh495" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+        <li><a href="https://mailto:mohammedsalhi218@gmail.com" target="_blank" class="icon brands fa-solid fa-envelopes"><span class="label">Email</span></a></li>
+      </ul>
+    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  </div>
+</div>

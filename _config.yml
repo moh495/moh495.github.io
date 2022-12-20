@@ -1,0 +1,35 @@
+# Dependencies
+markdown:         CommonMarkGhPages
+#kramdown
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            Nadjib Salhi
+#tagline:          'A Jekyll theme'
+description:      'Learning from geoscience data'
+url:              '/'
+baseurl:          '/'
+keywords:          'Nadjib Salhi machine learning ocean sea surface temperature height data assimilation'
+
+author:
+  name:           'Nadjib Salhi'
+  url:
+
+include:
+  - teaching
+#paginate:         5
+
+# Custom vars
+#version:          2.1.0
+
+#github:
+#  repo:           https://github.com/
+
+
+# search engine optimization - AK - Aug 16 - 2017
+gems:
+  - jekyll-seo-tag
